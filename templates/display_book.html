@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body>
+
+
+<a href="{{url_for('dashboard',id=current_user.id)}}">Dashboard</a>
+<h1>Book Content</h1>
+<div  style="max-width: 600px; margin: auto;">
+    <div >
+       
+        {% for image_data in image_data_list %}
+        <div 
+            {% if loop.first %}active{% endif %}>
+            <img src="data:image/png;base64,{{ image_data }}" class="d-block w-100" alt="Page {{ loop.index }}">
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev"
+        style="color: black;">
+        <span class="carousel-control-prev-icon" aria-hidden="true" style="color: black;"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next"
+        >
+        <span class="carousel-control-next-icon" aria-hidden="true" style="color: black;"> </span>
+        <span class="visually-hidden">Next</span>
+    </button> -->
+</div>
+
+<!-- {% for image_data in image_data_list %}
+        <img src="data:image/png;base64,{{ image_data }}" alt="Page {{ loop.index }}">
+        <br>
+{% endfor %} 
+
+-->
+</body>
+
+{% endblock content %}

@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Librarian Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Welcome to the Librarian Dashboard</h1>
+    
+    <div>
+        <canvas id="sectionChart" width="400" height="200"></canvas>
+    </div>
+    <div>
+      <h3>Number of Users: {{ total_users }}</h3>
+      <h3>Number of Sections: {{ total_sections }}</h3>
+  </div>
+    <div>
+      <h3>All Sections</h3>
+    <a href="{{url_for('display_section')}}">see here</a>
+  </div>
+
+    <script>
+        var ctx = document.getElementById('sectionChart').getContext('2d');
+        var sections_with_books = JSON.parse('{{ sections_with_books_json|tojson | safe }}');
+        console.log(sections_with_books);
+        var sectionNames = sections_with_books.map(function(section) {
+            return section.name;
+        });
+        var bookCounts = sections_with_books.map(function(section) {
+            return section.books.length;
+        });
+
+        var chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: sectionNames,
+        datasets: [{
+            label: 'Number of Books',
+            data: bookCounts,
+            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    stepSize: 1
+                }
+            }]
+        }
+    }
+});
+    </script>
+</body>
+</html>

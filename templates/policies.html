@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Policies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 20px;
+        }
+        h1, h2 {
+            margin-top: 20px;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .policy {
+            margin-bottom: 30px;
+        }
+        .back-to-home {
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Library Policies</h1>
+
+    <div class="policy">
+        <h2>Borrowing Policy</h2>
+        <p>Our library allows registered users to borrow books according to the following policies:</p>
+        <ul>
+            <li>Each user can borrow a maximum of 5 books at a time.</li>
+            <li>The borrowing period for each book is 15 days.</li>
+            <li>Renewals can be requested up to two times, provided there are no holds on the book.</li>
+            <li></li>
+            <!-- Add more borrowing policies here -->
+        </ul>
+    </div>
+    <div class="policy">
+        <h2>Librarian Policies</h2>
+        <p>Librarians are responsible for managing the library's operations and enforcing the following policies:</p>
+        <ul>
+            <li>Librarians must maintain accurate records of borrowed and returned books.</li>
+            <li>Librarian can add,delete,update sections</li>
+            <li>Librarian can add,delete,update book under section </li>
+
+            <!-- <li>Librarians are authorized to collect fines for overdue books and handle overdue notices.</li>
+            <li>Librarians should assist users with finding and checking out books, as well as answering any questions about library services.</li>
+            Add more librarian policies here -->
+        </ul>
+    </div>
+
+    <div class="policy">
+        <h2>Return Policy</h2>
+        <p>Users are required to adhere to the following guidelines when returning borrowed books:</p>
+        <ul>
+            <li>Books must be returned on or before the due date to avoid overdue fines.</li>
+            <li>If user dosen't return the book system will automatically block the access of books which are overdue</li>
+            <!-- <li>Books returned after the due date will incur fines of $0.50 per day per book.</li>
+            <li>Users are responsible for any damage to books while in their possession.</li> -->
+            <!-- Add more return policies here -->
+        </ul>
+    </div>
+
+    <!-- Add more policies as needed -->
+
+    <a href="{{url_for('home')}}" class="back-to-home">Back to Home</a>
+</body>
+</html>

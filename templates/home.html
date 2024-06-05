@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+<body id="home-body">
+  
+
+<nav class="navbar navbar-expand  ">
+    <div class="container-fluid ">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="#"><strong>Vachanalaya</strong></a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"><strong>Home</strong></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"> <strong>About Us</strong></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{{url_for('policies')}}"><strong>Policies</strong></a>
+          </li>
+         
+        </ul>
+        <form class="navbar-nav mx-auto d-flex "  action="{{ url_for('search_sections') }}" method="GET">
+          <input class="form-control me-2" id="input" type="search" placeholder="Search" aria-label="Search"  name="query">
+          <button class="btn " id="search-in-button" type="submit">Search</button>
+        </form>
+        <div class=" text-end d-flex " >
+          <!-- <button type="button" class="btn me-2 btn-sm btn-outline-secondary"><a href="{{url_for('register')}}"> Sign-up</a></button>
+          <button type="button" class="btn me-2 btn-sm btn-outline-secondary"><a href="{{url_for('login')}}" > Login</a> </button> -->
+          <a href="{{url_for('register')}}" class="btn  " id="signup"tabindex="-1"
+          role="button">Sign-up</a>
+          <span style="margin: 0 10px;">&nbsp;</span> 
+
+          <a href="{{url_for('login')}}" class="btn  " id="login" tabindex="-1"
+          role="button">Login</a>
+          {% if current_user.is_authenticated %}
+            
+          <!-- <button type="button" class="btn me-2 btn-sm btn-outline-secondary"><a href="{{url_for('logout')}}"> Logout</a></button> -->
+          <a href="{{url_for('logout')}}" class="btn  " id="logout"  tabindex="-1"
+          role="button">Logout</a>
+          {% endif %}
+
+
+        </div>
+      </div>
+      
+    </div>
+  </nav>    
+  {{ sections | safe }}
+</body>
+
+    
+{% endblock content %}

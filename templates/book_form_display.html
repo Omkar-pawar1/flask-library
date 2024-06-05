@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+  
+
+<br>
+<div class="container-md">
+  <form method="post" action="{{ url_for('uploadbook',section_id=section_id) }}" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    {{ form.book_name.label }}
+    {{ form.book_name (class="form-control")}}
+    <br>
+    {{ form.author.label (class="form-control")}}
+    {{ form.author (class="form-control")}}
+    <br>
+    {{ form.description.label (class="form-control")}}
+    {{ form.description(class="form-control") }}
+    <br>
+    {{ form.content.label (class="form-control")}}
+    {{ form.content (class="form-control")}}
+    <br>
+    {{ form.submit (class="form-control")}}
+  </form>
+</div>
+
+</body>
+
+{% endblock %}

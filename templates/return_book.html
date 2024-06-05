@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+
+  {% for book in rtun_book %}
+          <div>
+              <h3>Book Name: {{ book.book_name|title }}</h3>
+              <form method="post" action="{{ url_for('delete_returned_book', name=book.book_name) }}">
+                <button type="submit">Return Book</button>
+            </form>
+          </div>
+  {% endfor %}
+</body>
+   
+{% endblock content %}

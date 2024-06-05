@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+
+<nav class="navbar navbar-expand bg-dark bg-body-tertiary ">
+    <div class="container-fluid ">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" > Welcome {{user_.username}}</a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{url_for('display_section')}}">Borrow Books</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{url_for('return_book')}}">Return Book</a>
+          </li>
+          
+         
+        </ul>
+        <!-- <form class="navbar-nav mx-auto d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </form> -->
+        <div class=" text-end d-flex " >
+            <button type="button" class="btn me-2 btn-sm btn-outline-secondary custom"><a href="{{url_for('logout')}}"> Logout</a></button>
+
+
+        </div>
+      </div>
+      
+    </div>
+  </nav>   
+  
+  
+  {% if user_.user_borrowing %}
+        <h2>Books Borrowed:</h2>
+        <ul>
+            {% for borrow_record in user_.user_borrowing %}
+            <li>{{ borrow_record.book_name | title }}</li>
+            <form method="post" action="{{ url_for('display_book', name=borrow_record.book_name) }}">
+              <button type="submit">Read Book</button>
+          </form> 
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No books borrowed yet.</p>
+    {% endif %}
+
+
+
+  </body>
+ 
+{% endblock content %}

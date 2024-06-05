@@ -1,0 +1,126 @@
+/*.navbar {
+     height: 80px;  /*for nav bar */
+     /* background-color: #d5c1f594; *
+     background-color: #bf8af754;
+     position: relative;
+     z-index: 2;
+  }
+#input{
+     background-color: #6610f2c2;
+     color: #fff;
+   }
+#search-in-button {
+      background-color: #6610f2c2;
+      color: #fff;
+   }
+#signup{
+   background-color: #8c52f3;
+   color: #fff;
+}
+#login{
+   background-color: #8c52f3;
+   color: #fff;
+}
+#logout{
+   background-color: #8c52f3;
+   color: #fff;
+}
+#section-body{
+   background-color: #bf8af754;
+
+
+}
+#home-body{
+   background-color: #bf8af754;
+   /* background-image: url('/static/img2.jpg'); 
+   background-size: cover;  *
+   position: relative; 
+   z-index: 1;
+
+}
+#section-heading{
+   color:#000!important;
+}
+#description{
+   color:#000!important;
+}
+body{
+   background-color: #bf8af754;
+
+}
+.custom{
+   background-color: #6610f2c2 !important;
+}
+*/
+
+
+/*-----------------------*/
+/* Navbar Styles */
+.navbar {
+   height: 80px; /* Height of the navbar */
+   background-color: #bf8af7; /* Background color of the navbar */
+   position: relative;
+   z-index: 2; /* Ensure the navbar is on top of other elements */
+}
+
+/* Input Styles */
+.input {
+   background-color: #6610f2; /* Background color of input fields */
+   color: #fff; /* Text color of input fields */
+}
+
+/* Search Button Styles */
+#search-in-button {
+   background-color: #6610f2; /* Background color of search button */
+   color: #fff; /* Text color of search button */
+}
+
+/* Signup Button Styles */
+#signup {
+   background-color: #8c52f3; /* Background color of signup button */
+   color: #fff; /* Text color of signup button */
+}
+
+/* Login Button Styles */
+#login {
+   background-color: #49346c; /* Background color of login button */
+   color: #fff; /* Text color of login button */
+}
+
+/* Logout Button Styles */
+#logout {
+   background-color: #8c52f3; /* Background color of logout button */
+   color: #fff; /* Text color of logout button */
+}
+
+/* Section Body Styles */
+#section-body {
+   background-color: #bf8af7; /* Background color of section body */
+}
+
+/* Home Body Styles */
+#home-body {
+   background-color: #cfb6e9; /* Background color of home body */
+   /* Add background image and other styles if needed */
+}
+
+/* Section Heading Styles */
+#section-heading {
+   color: #000 !important; /* Color of section headings */
+}
+
+/* Description Styles */
+#description {
+   color: #000 !important; /* Color of description text */
+}
+
+/* Body Styles */
+body {
+   background-color: #e7ddd8; /* Default background color */
+}
+
+/* Custom Styles */
+.custom {
+   background-color: #efdd8e; /* Custom background color */
+   /* Add other custom styles if needed */
+}

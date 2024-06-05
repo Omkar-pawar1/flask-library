@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+       
+<h1>All available books are hear</h1>
+{% for book in all_books %}
+    {{book.id}}
+    <br>
+    {{book.name}}
+    <br>
+    {{book.author}}
+    <br>
+    {{book.description}}
+    <br>
+    <br>
+    {{book.filename}}
+    <br>
+    
+{% endfor %}
+ <a href="{{url_for('display_section')}}">home</a>
+</body>
+
+{% endblock content %}

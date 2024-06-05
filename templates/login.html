@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+<body class="d-flex  justify-content-center align-items-center vh-100py-4 ">
+  
+    <div class="container">
+    
+      <main class="form-signin w-100 m-auto">
+        <form method="post" action="" class="text-center" style="max-width: 400px; margin: auto;">
+          {{ form.hidden_tag() }}
+          <h1 class="h3 mb-3 fw-normal">Login</h1>
+  
+          <div class="form-floating">
+              {{ form.username(class="form-control", id="floatingInput", placeholder="name@example.com") }}
+              <label for="floatingInput">Username</label>
+          </div>
+          <div class="form-floating">
+              {{ form.password(class="form-control", id="floatingPassword", placeholder="Password") }}
+              <label for="floatingPassword">Password</label>
+          </div>
+  
+          
+          <!-- <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button> -->
+          {{ form.submit(class="btn btn-primary  w-100 py-2", type="submit") }}
+
+          
+      </form>
+        </main>
+     
+  </div>
+      
+      
+  
+  </body>
+<!-- <body>
+
+
+
+<h2>login page</h2>
+<br>
+<form method="post" action="">
+    {{form.hidden_tag()}}
+
+    {{form.username.label}}
+    {{form.username}}
+    <br>
+    {{form.password.label}}
+    {{form.password}}
+    <br>
+    {{form.submit}}
+</form>
+</body> -->
+
+{% endblock content %}
